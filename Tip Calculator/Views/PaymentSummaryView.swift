@@ -12,15 +12,29 @@ struct PaymentSummaryView: View {
     let split: Int
     let bill: Double
     
-    //TODO: CALCULATE
+    var tip: Double {
+        bill * Double(tipPercentage) / 100.0
+    }
+    
+    var total: Double {
+        bill + tip
+    }
+    //TODO: Localize...
+    func formattedAmount(value:Double, split: Int) -> String {
+        let newValue = value / Double(split)
+        
+        return "$\(newValue.formatted())"
+    }
+    
+    
     var totalPerPerson: String {
-        "300"
+        formattedAmount(value: total, split: split)
     }
     var billPerPerson: String {
-        "250"
+        formattedAmount(value: bill, split: split)
     }
     var tipPerPerson: String {
-        "50"
+        formattedAmount(value: tip, split: split)
     }
     
     
