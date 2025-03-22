@@ -8,32 +8,30 @@
 import SwiftUI
 
 struct TipCalculatorView: View {
-    @State private var tipPercentage = 20
-    @State private var split: Int = 1
-    @State private var bill: Double = 0.0
     @State private var isFocused: Bool = false
-    
+    @State private var tipModel: TipModel = TipModel(tipPercentage: 20, split: 1, bill: 0.0)
     let maxSplit: Int = 10
     
     var body: some View {
         ZStack {
-            Color.blue.opacity(0.6).ignoresSafeArea()
+            BackgroundView()
+           
             
             
-            VStack {
+            VStack(alignment: .leading) {
                 Spacer()
                 
                 Text("Title View // todo")
                 VStack(alignment: .leading) {
-                    Text("Enter total view")
-                    Text("Choose Tip View")
+                    EnterTotalView(bill: $tipModel.bill, isFocused: $isFocused)
+                    ChooseTipView(tipPercentage: $tipModel.tipPercentage)
                 }
                 Text("Split View")
                 
                 Spacer()
                 
                 if !isFocused {
-                    Text("Payment SummaryView")
+                    PaymentSummaryView(tipModel: tipModel)
                     
                     Spacer()
                 }
