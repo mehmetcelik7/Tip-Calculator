@@ -11,8 +11,8 @@ import SwiftUI
 struct Tip_CalculatorApp: App {
     var body: some Scene {
         WindowGroup {
-//            MainView()
-            TipCalculatorView()
+            MainView()
+           
         }
     }
 }
