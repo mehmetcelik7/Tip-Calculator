@@ -26,7 +26,8 @@ struct TipCalculatorView: View {
                     EnterTotalView(bill: $tipModel.bill, isFocused: $isFocused)
                     ChooseTipView(tipPercentage: $tipModel.tipPercentage)
                 }
-                Text("Split View")
+              
+                SplitView(split: $tipModel.split, alignment: .leading)
                 
                 Spacer()
                 
