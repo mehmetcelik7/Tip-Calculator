@@ -21,7 +21,7 @@ struct TipCalculatorView: View {
             VStack(alignment: .leading) {
                 Spacer()
                 
-                Text("Title View // todo")
+                TitleView()
                 VStack(alignment: .leading) {
                     EnterTotalView(bill: $tipModel.bill, isFocused: $isFocused)
                     ChooseTipView(tipPercentage: $tipModel.tipPercentage)
