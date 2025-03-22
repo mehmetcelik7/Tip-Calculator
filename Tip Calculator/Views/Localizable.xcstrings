@@ -207,6 +207,7 @@
       }
     },
     "Tip Calculator View(landscape" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -223,6 +224,7 @@
       }
     },
     "Tip Calculator View(portrait" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {

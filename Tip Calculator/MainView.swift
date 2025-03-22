@@ -25,7 +25,7 @@ struct MainView: View {
     var body: some View {
         VStack {
            
-            if isPortraitPhone {
+            if isIpad || isPortraitPhone {
                 TipCalculatorView()
             }else{
                 LandscapeTipCalculatorView()
